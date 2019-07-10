@@ -1,0 +1,32 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    border-bottom: 4px solid #D3D3D3;
+    background-color: white;
+}
+.navbar {
+    display: flex;
+    /* align-items: baseline; */
+    max-width: 980px;
+    margin: 0 auto;
+    padding-top: 1rem;
+    transition: all 0.2s ease;
+}
+.logo_wrap {
+    margin-right: auto;
+}
+.logo_wrap a{
+    color: black;
+    text-decoration: none;
+}
+.brand-logo {
+    margin-right: 1rem;
+}
+.share_wrap p {
+    margin-top: 1.52rem;
+    margin-bottom: 0;
+}
+
