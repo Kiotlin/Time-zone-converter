@@ -29,4 +29,59 @@
     margin-top: 1.52rem;
     margin-bottom: 0;
 }
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    margin-top: 150px;
+}
+.main-content {
+    margin-bottom: 2rem;
+}
+.topic {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+#usage a {
+    margin-right: 1rem;
+}
+.showcase {
+    margin-top: 2.5rem;
+}
+section.showcase > section.nes-container {
+    position: relative;
+    padding-bottom: 2.5rem;
+}
+.property {
+    margin-bottom: 1rem;
+}
+.property span{
+    margin: 0 1.8rem;
+}
+#texts > * {
+    margin-bottom: 1.5rem !important;
+}
+.select_box {
+    display: flex;
+}
+.nes-select {
+    width: 14%;
+    margin-right: 1rem;
+}
+.button_box {
+    display: flex;
+}
+.button_box button{
+    margin-right: 1em;
+}
+.info_box {
+    display: flex;
+    justify-content:space-between;
+}
+.info_box .time {
+}
+.info_box .blank_{
+    display: block;
+    margin-inline-start: 9rem;
+    margin-inline-end: 9rem;
+}
 

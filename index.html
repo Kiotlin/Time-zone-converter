@@ -39,8 +39,123 @@
             </div>
         </div>
     </div>
-    <div class="content">
-
+    <div class="container">
+        <div class="main-content">
+            <section class="topic">
+                <h2 id="usage">
+                    <a href="#usage">#</a>Usage
+                </h2>
+                <p>Fill in the select box and press the convert button, converted time from all over the world will be presented below.</p>
+            </section>
+            <section class="showcase">
+                <section class="nes-container with-title">
+                    <h3 class="title">Converter</h3>
+                    <div class="property">
+                        <span class="nes-text is-primary">Year</span>
+                        <span class="nes-text is-primary">Month</span>
+                        <span class="nes-text is-primary">Day</span>
+                        <span class="nes-text is-primary">Hour</span>
+                        <span class="nes-text is-primary">Minute</span>
+                        <span class="nes-text is-primary">second</span>
+                    </div>
+                    <div id="texts">
+                        <div class="select_box">
+                            <div class="nes-select">
+                                <select required id="year_select">
+                                    <option value="" disabled selected hidden>Select...</option>
+                                    <option value="0">1970</option>
+                                    <option value="0">1971</option>
+                                    <option value="0">1972</option>
+                                    <option value="0">1973</option>
+                                    <option value="0">1974</option>
+                                    <option value="0">1975</option>
+                                    <option value="0">1976</option>
+                                    <option value="0">1977</option>
+                                    <option value="0">1978</option>
+                                    <option value="0">1979</option>
+                                </select>
+                            </div>
+                            <div class="nes-select">
+                                <select required id="month_select">
+                                    <option value="" disabled selected hidden>Select...</option>
+                                    <option value="0">1</option>
+                                </select>
+                            </div>
+                            <div class="nes-select">
+                                <select required id="day_select">
+                                    <option value="" disabled selected hidden>Select...</option>
+                                    <option value="0">1</option>
+                                </select>
+                            </div>
+                            <div class="nes-select">
+                                <select required id="hour_select">
+                                    <option value="" disabled selected hidden>Select...</option>
+                                    <option value="0">00</option>
+                                </select>
+                            </div>
+                            <div class="nes-select">
+                                <select required id="min_select">
+                                    <option value="" disabled selected hidden>Select...</option>
+                                    <option value="0">00</option>
+                                </select>
+                            </div>
+                            <div class="nes-select">
+                                <select required id="sec_select">
+                                    <option value="" disabled selected hidden>Select...</option>
+                                    <option value="0">00</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="button_box">
+                            <button type="button" class="nes-btn is-primary">Convert</button>
+                            <button type="button" class="nes-btn is-success">Now</button>
+                            <button type="button" class="nes-btn is-error">Delete</button>
+                            <section>
+                                <button type="button" class="nes-btn" onclick="document.getElementById('dialog-rounded').showModal();">
+                                    Copy
+                                </button>
+                                <dialog class="nes-dialog is-rounded" id="dialog-rounded">
+                                    <form method="dialog">
+                                    <p class="title">Copy in success</p>
+                                    <p>Tip: use "ctrl + v" to.</p>
+                                    <menu class="dialog-menu">
+                                        <button class="nes-btn">Cancel</button>
+                                        <button class="nes-btn is-primary">Confirm</button>
+                                    </menu>
+                                    </form>
+                                </dialog>
+                            </section>
+                        </div>
+                        <div class="time_info">
+                            <div class="nes-container is-rounded">
+                                <div class="info_box">
+                                    <p>(-10:00) Hawaii</p>
+                                    <!-- <p class="blank_"></p> -->
+                                    <p class="time">2019-07-10 05:56:58</p>
+                                </div>
+                                <div class="info_box">
+                                    <p>(-09:00) Alaska</p>
+                                    <!-- <p class="blank_"></p> -->
+                                    <p>2019-07-10 08:59:06</p>
+                                </div>
+                                <div class="info_box">
+                                    <p>(-08:00) Pacific Time</p>
+                                    <!-- <p class="blank_"></p> -->
+                                    <p>2019-07-10 09:59:06</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section class="topic">
+                <h2 id="manual">
+                    <a href="#manual">#</a>Manual
+                </h2>
+                <p></p>
+            </section>
+        </div>
     </div>
+    
 </body>
 </html>
