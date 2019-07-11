@@ -13,7 +13,7 @@
 
     <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-41640153-4"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="./js/dialog-polyfill.js"></script>
     <script>
         if (window.navigator.userAgent.toLocaleLowerCase().indexOf('trident') !== -1) {
@@ -23,195 +23,197 @@
 
 </head>
 <body>
-    <div class="header">
-        <div class="navbar">
-            <div class="logo_wrap">
-                <a href="">
-                    <h1>
-                        <i class="nes-pokeball brand-logo"></i>Conv.ti
-                    </h1>
-                </a>
-            </div>
-            <div class="share_wrap">
-                <p>Share on SNS</p>
-                <div class="share_bar">
-                    <a href="" target="_blank">
-                        <i class="nes-icon twitter"></i>
+    <div id="nescss">
+        <div class="header">
+            <div class="navbar">
+                <div class="logo_wrap">
+                    <a href="">
+                        <h1>
+                            <i class="nes-pokeball brand-logo"></i>Conv.ti
+                        </h1>
                     </a>
-                    <a href="" target="_blank">
-                        <i class="nes-icon google"></i>
-                    </a>
-                    <a href="" target="_blank">
-                        <i class="nes-icon reddit"></i>
-                    </a>
-                    <a href="" target="_blank">
-                        <i class="nes-icon github"></i>
-                    </a>
+                </div>
+                <div class="share_wrap">
+                    <p>Share on SNS</p>
+                    <div class="share_bar">
+                        <a href="" target="_blank">
+                            <i class="nes-icon twitter"></i>
+                        </a>
+                        <a href="" target="_blank">
+                            <i class="nes-icon google"></i>
+                        </a>
+                        <a href="" target="_blank">
+                            <i class="nes-icon reddit"></i>
+                        </a>
+                        <a href="" target="_blank">
+                            <i class="nes-icon github"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="main-content">
-            <section class="topic">
-                <h2 id="usage">
-                    <a href="#usage">#</a>Usage
-                </h2>
-                <p>Fill in the select box and press the convert button, converted time from all over the world will be presented below.</p>
-            </section>
-            <section class="showcase">
-                <section class="nes-container with-title">
-                    <h3 class="title">Converter</h3>
-                    <div class="property">
-                        <span class="nes-text is-primary">Year</span>
-                        <span class="nes-text is-primary">Month</span>
-                        <span class="nes-text is-primary">Day</span>
-                        <span class="nes-text is-primary">Hour</span>
-                        <span class="nes-text is-primary">Minute</span>
-                        <span class="nes-text is-primary">second</span>
+        <div class="container">
+            <div class="main-content">
+                <section class="topic">
+                    <h2 id="usage">
+                        <a href="#usage">#</a>Usage
+                    </h2>
+                    <p>Fill in the select box and press the convert button, converted time from all over the world will be presented below.</p>
+                </section>
+                <section class="showcase">
+                    <section class="nes-container with-title">
+                        <h3 class="title">Converter</h3>
+                        <div class="property">
+                            <span class="nes-text is-primary">Year</span>
+                            <span class="nes-text is-primary">Month</span>
+                            <span class="nes-text is-primary">Day</span>
+                            <span class="nes-text is-primary">Hour</span>
+                            <span class="nes-text is-primary">Minute</span>
+                            <span class="nes-text is-primary">second</span>
+                        </div>
+                        <div id="texts">
+                            <div class="select_box">
+                                <div class="nes-select">
+                                    <select required id="year_select">
+                                        <option value="" disabled selected hidden>Select...</option>
+                                        <option value="0">1970</option>
+                                        <option value="0">1971</option>
+                                        <option value="0">1972</option>
+                                        <option value="0">1973</option>
+                                        <option value="0">1974</option>
+                                        <option value="0">1975</option>
+                                        <option value="0">1976</option>
+                                        <option value="0">1977</option>
+                                        <option value="0">1978</option>
+                                        <option value="0">1979</option>
+                                    </select>
+                                </div>
+                                <div class="nes-select">
+                                    <select required id="month_select">
+                                        <option value="" disabled selected hidden>Select...</option>
+                                        <option value="0">1</option>
+                                    </select>
+                                </div>
+                                <div class="nes-select">
+                                    <select required id="day_select">
+                                        <option value="" disabled selected hidden>Select...</option>
+                                        <option value="0">1</option>
+                                    </select>
+                                </div>
+                                <div class="nes-select">
+                                    <select required id="hour_select">
+                                        <option value="" disabled selected hidden>Select...</option>
+                                        <option value="0">00</option>
+                                    </select>
+                                </div>
+                                <div class="nes-select">
+                                    <select required id="min_select">
+                                        <option value="" disabled selected hidden>Select...</option>
+                                        <option value="0">00</option>
+                                    </select>
+                                </div>
+                                <div class="nes-select">
+                                    <select required id="sec_select">
+                                        <option value="" disabled selected hidden>Select...</option>
+                                        <option value="0">00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="button_box">
+                                <button type="button" class="nes-btn is-primary">Convert</button>
+                                <button type="button" class="nes-btn is-success">Now</button>
+                                <button type="button" class="nes-btn is-error">Clear</button>
+                                <section>
+                                    <button type="button" class="nes-btn" onclick="document.getElementById('dialog-rounded').showModal();">
+                                        Copy
+                                    </button>
+                                    <dialog class="nes-dialog is-rounded" id="dialog-rounded">
+                                        <form method="dialog">
+                                            <p class="title">Copy in success</p>
+                                            <p>Tip: use "ctrl + v" to paste.</p>
+                                            <menu class="dialog-menu">
+                                                <button class="nes-btn">Cancel</button>
+                                                <button class="nes-btn is-primary">Confirm</button>
+                                            </menu>
+                                        </form>
+                                    </dialog>
+                                </section>
+                            </div>
+                            <div class="time_info">
+                                <div class="nes-container is-rounded">
+                                    <div class="info_box">
+                                        <label>
+                                            <input type="checkbox" class="nes-checkbox" />
+                                            <span>(-10:00) Hawaii</span>
+                                        </label>
+                                        <!-- <p class="blank_"></p> -->
+                                        <p class="time">2019-07-10 05:56:58</p>
+                                    </div>
+                                    <div class="info_box">
+                                        <label>
+                                            <input type="checkbox" class="nes-checkbox" />
+                                            <span>(-09:00) Alaska</span>
+                                        </label>
+                                        <!-- <p class="blank_"></p> -->
+                                        <p>2019-07-10 08:59:06</p>
+                                    </div>
+                                    <div class="info_box">
+                                        <label>
+                                            <input type="checkbox" class="nes-checkbox" />
+                                            <span>(-08:00) Pacific Time</span>
+                                        </label>
+                                        <!-- <p class="blank_"></p> -->
+                                        <p>2019-07-10 09:59:06</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section class="topic">
+                    <h2 id="manual">
+                        <a href="#manual">#</a>Manual
+                    </h2>
+                    <p></p>
+                    <div class="banner">
+                        <button type="button" class="nes-btn is-primary">Convert</button>
+                        <p>Convert the time that you have filled in the select box.</p>
                     </div>
-                    <div id="texts">
-                        <div class="select_box">
-                            <div class="nes-select">
-                                <select required id="year_select">
-                                    <option value="" disabled selected hidden>Select...</option>
-                                    <option value="0">1970</option>
-                                    <option value="0">1971</option>
-                                    <option value="0">1972</option>
-                                    <option value="0">1973</option>
-                                    <option value="0">1974</option>
-                                    <option value="0">1975</option>
-                                    <option value="0">1976</option>
-                                    <option value="0">1977</option>
-                                    <option value="0">1978</option>
-                                    <option value="0">1979</option>
-                                </select>
-                            </div>
-                            <div class="nes-select">
-                                <select required id="month_select">
-                                    <option value="" disabled selected hidden>Select...</option>
-                                    <option value="0">1</option>
-                                </select>
-                            </div>
-                            <div class="nes-select">
-                                <select required id="day_select">
-                                    <option value="" disabled selected hidden>Select...</option>
-                                    <option value="0">1</option>
-                                </select>
-                            </div>
-                            <div class="nes-select">
-                                <select required id="hour_select">
-                                    <option value="" disabled selected hidden>Select...</option>
-                                    <option value="0">00</option>
-                                </select>
-                            </div>
-                            <div class="nes-select">
-                                <select required id="min_select">
-                                    <option value="" disabled selected hidden>Select...</option>
-                                    <option value="0">00</option>
-                                </select>
-                            </div>
-                            <div class="nes-select">
-                                <select required id="sec_select">
-                                    <option value="" disabled selected hidden>Select...</option>
-                                    <option value="0">00</option>
-                                </select>
-                            </div>
+                    <div class="banner">
+                        <button type="button" class="nes-btn is-success">Now</button>
+                        <p>Set the select box with current time, and then convert in auto.</p>
+                    </div>
+                    <div class="banner">
+                        <button type="button" class="nes-btn is-error">Clear</button>
+                        <p>Initialize the select box.</p>
+                    </div>
+                    <div class="banner">
+                        <button type="button" class="nes-btn">Copy</button>
+                        <p>Copy the time info you have selected.</p>
+                    </div>
+                    <div class="banner">
+                        <div style="background-color:#212529; padding: 1rem 1rem;">
+                            <label style="display: inline-flex;margin-bottom:0;">
+                                <input type="checkbox" class="nes-checkbox is-dark" checked/>
+                                <span>(-10:00) Hawaii</span>
+                            </label>
                         </div>
-                        <div class="button_box">
-                            <button type="button" class="nes-btn is-primary">Convert</button>
-                            <button type="button" class="nes-btn is-success">Now</button>
-                            <button type="button" class="nes-btn is-error">Clear</button>
-                            <section>
-                                <button type="button" class="nes-btn" onclick="document.getElementById('dialog-rounded').showModal();">
-                                    Copy
-                                </button>
-                                <dialog class="nes-dialog is-rounded" id="dialog-rounded">
-                                    <form method="dialog">
-                                        <p class="title">Copy in success</p>
-                                        <p>Tip: use "ctrl + v" to paste.</p>
-                                        <menu class="dialog-menu">
-                                            <button class="nes-btn">Cancel</button>
-                                            <button class="nes-btn is-primary">Confirm</button>
-                                        </menu>
-                                    </form>
-                                </dialog>
-                            </section>
-                        </div>
-                        <div class="time_info">
-                            <div class="nes-container is-rounded">
-                                <div class="info_box">
-                                    <label>
-                                        <input type="checkbox" class="nes-checkbox" />
-                                        <span>(-10:00) Hawaii</span>
-                                    </label>
-                                    <!-- <p class="blank_"></p> -->
-                                    <p class="time">2019-07-10 05:56:58</p>
-                                </div>
-                                <div class="info_box">
-                                    <label>
-                                        <input type="checkbox" class="nes-checkbox" />
-                                        <span>(-09:00) Alaska</span>
-                                    </label>
-                                    <!-- <p class="blank_"></p> -->
-                                    <p>2019-07-10 08:59:06</p>
-                                </div>
-                                <div class="info_box">
-                                    <label>
-                                        <input type="checkbox" class="nes-checkbox" />
-                                        <span>(-08:00) Pacific Time</span>
-                                    </label>
-                                    <!-- <p class="blank_"></p> -->
-                                    <p>2019-07-10 09:59:06</p>
-                                </div>
-                            </div>
-                        </div>
+                        <p>Configure the checkbox to decide whether this time info will be added to the copy channel.</p>
                     </div>
                 </section>
-            </section>
-            <section class="topic">
-                <h2 id="manual">
-                    <a href="#manual">#</a>Manual
-                </h2>
-                <p></p>
-                <div class="banner">
-                    <button type="button" class="nes-btn is-primary">Convert</button>
-                    <p>Convert the time that you have filled in the select box.</p>
-                </div>
-                <div class="banner">
-                    <button type="button" class="nes-btn is-success">Now</button>
-                    <p>Set the select box with current time, and then convert in auto.</p>
-                </div>
-                <div class="banner">
-                    <button type="button" class="nes-btn is-error">Clear</button>
-                    <p>Initialize the select box.</p>
-                </div>
-                <div class="banner">
-                    <button type="button" class="nes-btn">Copy</button>
-                    <p>Copy the time info you have selected.</p>
-                </div>
-                <div class="banner">
-                    <div style="background-color:#212529; padding: 1rem 1rem;">
-                        <label style="display: inline-flex;margin-bottom:0;">
-                            <input type="checkbox" class="nes-checkbox is-dark" checked/>
-                            <span>(-10:00) Hawaii</span>
-                        </label>
-                    </div>
-                    <p>Configure the checkbox to decide whether this time info will be added to the copy channel.</p>
-                </div>
-            </section>
+            </div>
+            <footer>
+                <p>
+                    <span>©2019</span>
+                    <a href="" target="_blank">Work At Home Committee</a>
+                    <span>-</span>
+                    <a href="">@Kiokh</a>
+                </p>
+            </footer>
+            <button id="go_top" type="button" class="nes-btn is-error scroll-btn active">
+                <span><</span>
+            </button>
         </div>
-        <footer>
-            <p>
-                <span>©2019</span>
-                <a href="" target="_blank">Work At Home Committee</a>
-                <span>-</span>
-                <a href="">@Kiokh</a>
-            </p>
-        </footer>
-        <button type="button" class="nes-btn is-error scroll-btn active">
-            <span><</span>
-        </button>
     </div>
     <script src="./js/script.js"></script>
 </body>
