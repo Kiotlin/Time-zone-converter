@@ -41,7 +41,7 @@
     margin-top: 2rem;
     margin-bottom: 3rem;
 }
-#usage a {
+.topic h2 a {
     margin-right: 1rem;
 }
 .showcase {
@@ -77,11 +77,39 @@ section.showcase > section.nes-container {
     display: flex;
     justify-content:space-between;
 }
-.info_box .time {
-}
 .info_box .blank_{
     display: block;
     margin-inline-start: 9rem;
     margin-inline-end: 9rem;
+}
+.banner {
+    display: flex;
+    margin-bottom: 1rem;
+}
+.banner p {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+footer a {
+    color: #333;
+    text-decoration: none;
+}
+.scroll-btn {
+    position: fixed;
+    bottom: -60px;
+    right: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,.6);
+    transition: all 0.3s ease;
+}
+.scroll-btn.active {
+    bottom: 25px;
+}
+.scroll-btn > span {
+    display: block;
+    transform: rotate(90deg);
 }
 

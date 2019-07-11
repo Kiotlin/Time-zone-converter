@@ -8,7 +8,19 @@
 
     <link href="https://fonts.proxy.ustclug.org/css?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link href="./css/dialog-polyfill.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
+
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-41640153-4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="./js/dialog-polyfill.js"></script>
+    <script>
+        if (window.navigator.userAgent.toLocaleLowerCase().indexOf('trident') !== -1) {
+            window.alert('IE is not supported on this page.')
+        } 
+    </script>
+
 </head>
 <body>
     <div class="header">
@@ -109,19 +121,19 @@
                         <div class="button_box">
                             <button type="button" class="nes-btn is-primary">Convert</button>
                             <button type="button" class="nes-btn is-success">Now</button>
-                            <button type="button" class="nes-btn is-error">Delete</button>
+                            <button type="button" class="nes-btn is-error">Clear</button>
                             <section>
                                 <button type="button" class="nes-btn" onclick="document.getElementById('dialog-rounded').showModal();">
                                     Copy
                                 </button>
                                 <dialog class="nes-dialog is-rounded" id="dialog-rounded">
                                     <form method="dialog">
-                                    <p class="title">Copy in success</p>
-                                    <p>Tip: use "ctrl + v" to.</p>
-                                    <menu class="dialog-menu">
-                                        <button class="nes-btn">Cancel</button>
-                                        <button class="nes-btn is-primary">Confirm</button>
-                                    </menu>
+                                        <p class="title">Copy in success</p>
+                                        <p>Tip: use "ctrl + v" to paste.</p>
+                                        <menu class="dialog-menu">
+                                            <button class="nes-btn">Cancel</button>
+                                            <button class="nes-btn is-primary">Confirm</button>
+                                        </menu>
                                     </form>
                                 </dialog>
                             </section>
@@ -129,17 +141,26 @@
                         <div class="time_info">
                             <div class="nes-container is-rounded">
                                 <div class="info_box">
-                                    <p>(-10:00) Hawaii</p>
+                                    <label>
+                                        <input type="checkbox" class="nes-checkbox" />
+                                        <span>(-10:00) Hawaii</span>
+                                    </label>
                                     <!-- <p class="blank_"></p> -->
                                     <p class="time">2019-07-10 05:56:58</p>
                                 </div>
                                 <div class="info_box">
-                                    <p>(-09:00) Alaska</p>
+                                    <label>
+                                        <input type="checkbox" class="nes-checkbox" />
+                                        <span>(-09:00) Alaska</span>
+                                    </label>
                                     <!-- <p class="blank_"></p> -->
                                     <p>2019-07-10 08:59:06</p>
                                 </div>
                                 <div class="info_box">
-                                    <p>(-08:00) Pacific Time</p>
+                                    <label>
+                                        <input type="checkbox" class="nes-checkbox" />
+                                        <span>(-08:00) Pacific Time</span>
+                                    </label>
                                     <!-- <p class="blank_"></p> -->
                                     <p>2019-07-10 09:59:06</p>
                                 </div>
@@ -153,9 +174,45 @@
                     <a href="#manual">#</a>Manual
                 </h2>
                 <p></p>
+                <div class="banner">
+                    <button type="button" class="nes-btn is-primary">Convert</button>
+                    <p>Convert the time that you have filled in the select box.</p>
+                </div>
+                <div class="banner">
+                    <button type="button" class="nes-btn is-success">Now</button>
+                    <p>Set the select box with current time, and then convert in auto.</p>
+                </div>
+                <div class="banner">
+                    <button type="button" class="nes-btn is-error">Clear</button>
+                    <p>Initialize the select box.</p>
+                </div>
+                <div class="banner">
+                    <button type="button" class="nes-btn">Copy</button>
+                    <p>Copy the time info you have selected.</p>
+                </div>
+                <div class="banner">
+                    <div style="background-color:#212529; padding: 1rem 1rem;">
+                        <label style="display: inline-flex;margin-bottom:0;">
+                            <input type="checkbox" class="nes-checkbox is-dark" checked/>
+                            <span>(-10:00) Hawaii</span>
+                        </label>
+                    </div>
+                    <p>Configure the checkbox to decide whether this time info will be added to the copy channel.</p>
+                </div>
             </section>
         </div>
+        <footer>
+            <p>
+                <span>©2019</span>
+                <a href="" target="_blank">Work At Home Committee</a>
+                <span>-</span>
+                <a href="">@Kiokh</a>
+            </p>
+        </footer>
+        <button type="button" class="nes-btn is-error scroll-btn active">
+            <span><</span>
+        </button>
     </div>
-    
+    <script src="./js/script.js"></script>
 </body>
 </html>
