@@ -41,13 +41,16 @@ header.sticky .share_wrap p {
     margin-top: 1.52rem;
     margin-bottom: 0;
 }
+.share_bar a {
+    text-decoration-line: none;
+}
 .container {
     max-width: 980px;
     margin: 0 auto;
     margin-top: 150px;
 }
 .main-content {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 .topic {
     margin-top: 2rem;
@@ -125,4 +128,7 @@ footer a {
     display: block;
     transform: rotate(90deg);
 }
-
+.article-link .title a {
+    color: #333;
+    text-decoration-line: none;
+}
