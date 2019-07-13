@@ -191,10 +191,10 @@ function convertFormat(y,m,d,h,mi,s,zone){
         hour = con_hour.toString();
     }
     if(parseInt(month) < 10){
-        month = "0" + month;
+        month = "0" + parseInt(month);
     }
     if(parseInt(day) < 10){
-        day = "0" + day;
+        day = "0" + parseInt(day);
     }
     return year + "-" + month + "-" + day + " " + hour + "-" + minute + "-" + second;
 }
@@ -217,10 +217,8 @@ function showTime(){
         }
         list[i].innerHTML = time_str;
     }
-    clearInterval();
 }
-
-var bot = setInterval("showTime()",1000);
+var bot = setInterval("showTime()",0);
 
 function convert(){
 
@@ -249,29 +247,120 @@ function convert(){
         var mi = getMinute.options[indexMinute].text; 
         var s = getSecond.options[indexSecond].text; 
         
+        //verify
+        var selectBox = document.getElementsByClassName("nes-select");
+        var count = 0;
+        for(var i=0; i<selectBox.length; i++){
+            var select = selectBox[i].children[0];
+            if(select.selectedIndex == 0) {count++;}
+        }
+        if(count > 0){
+            //create dialog
+            var dialog = document.getElementById('dialog-convert');
+            dialogPolyfill.registerDialog(dialog);
+            dialog.showModal();
+            return;
+        }
+
         time_str = "";
         var list = document.getElementsByClassName("time");
         for (var i = 0; i < list.length; i++){
             if(i >= 13){
-                time_str = convertFormat(y,m,d,h,mi,s, -1 * (i-12));
+                time_str = convertFormat(y,m,d,h,mi,s, (-1 * i) + 4); //default local time zone - UTC+8
             }else {
-                time_str = convertFormat(y,m,d,h,mi,s, i);
+                time_str = convertFormat(y,m,d,h,mi,s, i - 8); //default local time zone - UTC+8
             }
             list[i].innerHTML = time_str;
         }
-        window.clearInterval(bot);
+        //clear intervals
+        for(var i=1; i<=bot; i++){
+            clearInterval(i);
+        }
     };
+
 }
 convert();
 
 function now(){
+
     var buttonNow = document.getElementById("_now");
 
     buttonNow.onclick = function(){
-        bot = setInterval("showTime()",1000);
+        bot = window.setInterval("showTime()",0);
     };
 }
 now();
+
+function clear(){
+
+    var buttonClear = document.getElementById("_clear");
+
+    buttonClear.onclick = function(){
+        var selectBox = document.getElementsByClassName("nes-select");   
+        var checkBox = document.getElementsByClassName("nes-checkbox");
+        for(var i=0; i<selectBox.length; i++){
+            var select = selectBox[i].children[0];
+            select.selectedIndex = 0;
+        } 
+        for(var i=0; i<checkBox.length; i++){
+            if(checkBox[i].value == 1){
+                checkBox[i].click();
+            }
+        } 
+        bot = window.setInterval("showTime()",0);
+    };
+}
+clear();
+
+function checkBoxAddAttri(){
+    var checkbox = document.getElementsByClassName("nes-checkbox");
+    for(var i=0; i<checkbox.length; i++){
+        checkbox[i].value = "0";
+    }
+}
+checkBoxAddAttri();
+
+function labelPress(caller){
+    var wrap = caller.parentNode;
+    var value = caller.value;
+    if(parseInt(value)==0){
+        wrap.classList.add('selected');
+        caller.value = "1";
+    }else{
+        wrap.classList.remove('selected');
+        caller.value = "0";
+    }  
+}
+
+function execCopy(text){
+    var textArea = document.createElement('textArea');  
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("Copy");
+    document.body.removeChild(textArea);
+}
+
+function copyToClipBoard(){
+    var clipBoardContent = "";
+    var checkBox = document.getElementsByClassName("nes-checkbox");
+    var checkBoxSelected = 0;
+    for(var i=0; i<checkBox.length; i++){
+        if(parseInt(checkBox[i].value) == 1){
+            var timeZone = checkBox[i].nextSibling.nextSibling.innerHTML; 
+            var convertedTime = checkBox[i].parentNode.parentNode.nextSibling.nextSibling.innerHTML;
+            clipBoardContent = clipBoardContent + "[" + timeZone +"] " + convertedTime + "\n";
+            checkBoxSelected++;
+        }
+    }
+    if(checkBoxSelected == 0) clipBoardContent = "[ Please press at least one checkbox... ]";
+    execCopy(clipBoardContent);
+
+    //create dialog
+    var dialog = document.getElementById('dialog-rounded');
+    dialogPolyfill.registerDialog(dialog);
+    dialog.showModal();
+}
 
 $(document).ready(function(){
 

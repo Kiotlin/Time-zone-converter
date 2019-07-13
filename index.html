@@ -111,11 +111,23 @@
                                 </div>
                             </div>
                             <div class="button_box">
-                                <button id="_convert" type="button" class="nes-btn is-primary">Convert</button>
+                                <section>
+                                    <button id="_convert" type="button" class="nes-btn is-primary">Convert</button>
+                                    <dialog class="nes-dialog is-rounded" id="dialog-convert">
+                                        <form method="dialog">
+                                            <p class="title">Time information incomplete</p>
+                                            <p>Tip: Please reconfig the selectbox.</p>
+                                            <menu class="dialog-menu">
+                                                <button class="nes-btn">Cancel</button>
+                                                <button class="nes-btn is-primary">Confirm</button>
+                                            </menu>
+                                        </form>
+                                    </dialog>
+                                </section>
                                 <button id="_now" type="button" class="nes-btn is-success">Now</button>
                                 <button id="_clear" type="button" class="nes-btn is-error">Clear</button>
                                 <section>
-                                    <button type="button" class="nes-btn" onclick="document.getElementById('dialog-rounded').showModal();">
+                                    <button type="button" class="nes-btn" onclick="copyToClipBoard();">
                                         Copy
                                     </button>
                                     <dialog class="nes-dialog is-rounded" id="dialog-rounded">
@@ -134,202 +146,227 @@
                                 <div class="nes-container is-rounded">
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC/GMT </span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)" />
+                                                <span>UTC/GMT</span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+1</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)" />
+                                                <span>UTC+1 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+2</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC+2 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+3</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC+3 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+4</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC+4 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+5</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC+5 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+6</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC+6 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+7</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC+7 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+8</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC+8 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+9</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC+9 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+10</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC+10 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+11</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC+11 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC+12</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC+12 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-1</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-1 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-2</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-2 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-3</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-3 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-4</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-4 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-5</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-5 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-6</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-6 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-7</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-7 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-8</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-8 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-9</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-9 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-10</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-10 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-11</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-11 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                     <div class="info_box">
                                         <label>
-                                            <input type="checkbox" class="nes-checkbox" />
-                                            <span>UTC-12</span>
+                                            <div class="wrap">
+                                                <input type="checkbox" class="nes-checkbox" onclick="labelPress(this)"/>
+                                                <span>UTC-12 </span>
+                                            </div>
                                         </label>
-                                        <!-- <p class="blank_"></p> -->
                                         <p class="time"></p>
                                     </div>
                                 </div>

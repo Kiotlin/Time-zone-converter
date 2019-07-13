@@ -89,10 +89,11 @@ section.showcase > section.nes-container {
     display: flex;
     justify-content:space-between;
 }
-.info_box .blank_{
-    display: block;
-    margin-inline-start: 9rem;
-    margin-inline-end: 9rem;
+.wrap.selected {
+    padding-right: 1rem;
+    border-radius: 10px;
+    background: rgba(221, 221, 221, 0.856);
+    transition: all 0.3s ease;
 }
 .banner {
     display: flex;
