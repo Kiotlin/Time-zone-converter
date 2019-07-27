@@ -1,0 +1,26 @@
+{
+  "name": "conv-ti",
+  "version": "1.0.0",
+  "description": "NS style timezone converter | ファミコン風タイムゾーン コンバーター ",
+  "main": "index.html",
+  "scripts": {
+    "start": "node start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiotlin/conv-ti.git"
+  },
+  "keywords": [
+    "timezone-converter",
+    "NS-style"
+  ],
+  "author": "Kiotlin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kiotlin/conv-ti/issues"
+  },
+  "homepage": "https://github.com/Kiotlin/conv-ti#readme",
+  "dependencies": {
+    "open": "^6.4.0"
+  }
+}

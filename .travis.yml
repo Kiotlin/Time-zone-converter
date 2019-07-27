@@ -1,0 +1,10 @@
+language: node_js
+
+node_js: stable
+
+script:
+  - npm install open
+  - npm run start
+
+install:
+  - npm install 
