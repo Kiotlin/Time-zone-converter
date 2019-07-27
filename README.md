@@ -1,11 +1,10 @@
-# conv-ti
+# conv-ti [![Build Status](https://travis-ci.org/Kiotlin/conv-ti.svg?branch=master)](https://travis-ci.org/Kiotlin/conv-ti)  
 [![conv-ti.jpg](https://i.loli.net/2019/07/24/5d3869ae7bd5a76991.jpg)](https://kiotlin.github.io/conv-ti/)
 
 ## 使用指南
 提供两种方式使用conv-ti
 
 #### 直接访问
-[conv-ti](https://kiotlin.github.io/conv-ti/)  
 使用方法见[网站](https://kiotlin.github.io/conv-ti/)主页`# Manual` 区域
 
 #### 部署到本地
