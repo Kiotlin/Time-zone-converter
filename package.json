@@ -1,6 +1,6 @@
 {
   "name": "conv-ti",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "NS style timezone converter | ファミコン風タイムゾーン コンバーター ",
   "main": "index.html",
   "scripts": {
