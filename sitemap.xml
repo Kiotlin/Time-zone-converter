@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+
+<url>
+ <loc>https://github.com/Kiotlin/Time-zone-converter</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-08-03</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://twitter.com/Kiokh_</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-08-03</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://kiotlin.github.io/conv-ti/</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-08-03</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+<url>
+ <loc>https://zh.wikipedia.org/wiki/%E6%97%B6%E5%8C%BA%E5%88%97%E8%A1%A8</loc>
+ <priority>0.3</priority>
+ <lastmod>2019-08-03</lastmod>
+ <changefreq>always</changefreq>
+</url>
+
+</urlset>
